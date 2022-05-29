@@ -1,0 +1,23 @@
+Written by: someone..
+Date: 2022-05-18
+
+########################
+
+Running example:
+
+codegen verb noun
+fluffy treehugger
+
+########################
+
+verb and noun
+
+From the example above verb and noun are two files that end in .txt
+
+In order to create them, use wordlists you find online or something.
+name the files whatever you feel like, just make sure you add .txt extension on the end.
+
+Good luck and have fun.
+
+...
+

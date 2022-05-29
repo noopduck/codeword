@@ -1,0 +1,32 @@
+#!/bin/env python
+
+import sys
+import random
+
+# Lousy attemt at improving random
+def fastforward_rand(length):
+    rng = random.SystemRandom();
+
+    result = 0
+    for i in range(0, rng.randint(1, length)):
+        result = rng.randint(0,length-1)
+
+    return result
+
+def gen_code(wordlist1, wordlist2):
+    wordlist_content1 = open(f"{wordlist1}.txt", "r").readlines()
+    wordlist_content1_len = len(wordlist_content1)
+    
+    wordlist_content2 = open(f"{wordlist2}.txt", "r").readlines()
+    wordlist_content2_len = len(wordlist_content2)
+    
+    v = fastforward_rand(wordlist_content1_len)
+    a = fastforward_rand(wordlist_content2_len)
+
+    print(f"{wordlist_content1[v].strip()} {wordlist_content2[a].strip()}")
+    
+def main():
+    gen_code(sys.argv[1], sys.argv[2])
+
+if __name__ == "__main__":
+    main()
