@@ -6,27 +6,28 @@ import random
 # Lousy attemt at improving random
 def fastforward_rand(length):
     rng = random.SystemRandom();
-
-    result = 0
-    for i in range(0, rng.randint(1, length)):
-        result = rng.randint(0,length-1)
+    result = rng.randint(0, length-1)
 
     return result
 
-def gen_code(wordlist1, wordlist2):
+def gen_code(wordlist1, wordlist2, wordlist3):
     wordlist_content1 = open(f"{wordlist1}.txt", "r").readlines()
     wordlist_content1_len = len(wordlist_content1)
     
     wordlist_content2 = open(f"{wordlist2}.txt", "r").readlines()
     wordlist_content2_len = len(wordlist_content2)
     
+    wordlist_content3 = open(f"{wordlist3}.txt", "r").readlines()
+    wordlist_content3_len = len(wordlist_content3)
+    
     v = fastforward_rand(wordlist_content1_len)
     a = fastforward_rand(wordlist_content2_len)
+    c = fastforward_rand(wordlist_content3_len)
 
-    print(f"{wordlist_content1[v].strip()} {wordlist_content2[a].strip()}")
+    print(f"{wordlist_content1[v].strip()} {wordlist_content2[a].strip()} {wordlist_content3[c].strip()}" )
     
 def main():
-    gen_code(sys.argv[1], sys.argv[2])
+    gen_code(sys.argv[1], sys.argv[2], sys.argv[3])
 
 if __name__ == "__main__":
     main()
